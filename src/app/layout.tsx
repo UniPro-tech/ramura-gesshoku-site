@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BIZ_UDMincho } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const bizUdMincho = BIZ_UDMincho({
   weight: ["400", "700"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${bizUdMincho.className} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

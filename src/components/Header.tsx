@@ -1,13 +1,7 @@
+import { LINKS } from "@/config";
 import Link from "next/link";
 
 export function Header() {
-  const LINKS = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/#download", label: "Download" },
-    { href: "/license", label: "License" },
-    { href: "/contact", label: "Contact" },
-  ];
   return (
     <header className="w-full mt-8 text-white flex justify-center items-center text-4xl absolute top-0 z-50">
       <nav>
