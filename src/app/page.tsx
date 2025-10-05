@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-b from-[#040305] to-[#35333d]">
+    <main className="bg-gradient-to-b from-[#040305] to-[#35333d] pb-20">
       <section
         id="hero"
         className="min-h-screen relative flex flex-col justify-center items-center"
@@ -87,6 +87,59 @@ export default function Home() {
           <br />
           月は静かに――世界を見下ろす。
         </p>
+      </section>
+      <section
+        id="about"
+        className="flex flex-col justify-center items-center gap-8 mb-20"
+      >
+        <h2 className="text-center text-6xl">
+          <ruby>
+            月蝕<rt>Gesshoku</rt>
+          </ruby>
+        </h2>
+        <div className="flex flex-row justify-center items-center gap-16 w-full max-w-7xl">
+          <div className="flex flex-col justify-start items-center mb-30">
+            <div
+              id="lead"
+              className="text-3xl mb-4 flex flex-col justify-center items-center"
+            >
+              <span className="w-full break-keep">──「今夜は月が綺麗ですね。</span>
+              <span className="w-full break-keep">
+                {"　　"}ワタシの事は『
+                <ruby>
+                  月蝕<rt>Gesshoku</rt>
+                </ruby>
+                』とお呼びください」──
+              </span>
+            </div>
+            <p className="text-xl">
+              身長：194cm（シルクハット込み254cm）
+              <br />
+              体温：昼 11&#8451; / 夜 -15&#8451;
+              <br />
+              能力：未解 / 重引 / 天落 / 回帰
+              <br />
+              特徴：正体不明の存在。 <br />
+              星と歴史を愛し、冷たい体温と共に不可避の予言を告げる。
+              <br />
+              口調：紳士的だが少し不気味
+              <br />
+              好き：星、芸術、歴史、酒、観察
+              <br />
+              戦闘力：高いが「戦うのは苦手」と本人談
+              <br />
+            </p>
+          </div>
+          <div>
+            {/*　TODO:スライドショーにする */}
+            <Image
+              src="/images/stand/3.png"
+              alt="About Image"
+              width={400}
+              height={0}
+            />
+          </div>
+        </div>
       </section>
     </main>
   );
