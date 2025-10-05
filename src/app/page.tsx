@@ -5,7 +5,7 @@ export default function Home() {
     <main className="bg-gradient-to-b from-[#040305] to-[#35333d] pb-20">
       <section
         id="hero"
-        className="min-h-screen relative flex flex-col justify-center items-center"
+        className="min-h-screen relative flex flex-col justify-center items-center text-white"
       >
         <Image
           src="/images/hero.png"
@@ -16,7 +16,7 @@ export default function Home() {
         />
         <div className="relative z-10 flex flex-row items-center w-full max-w-7xl justify-between">
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-[15rem] text-white text-center">
+            <h1 className="text-[15rem] text-center">
               <ruby>
                 月蝕<rt className="text-7xl">Gesshoku</rt>
               </ruby>
@@ -33,7 +33,7 @@ export default function Home() {
       </section>
       <section
         id="poem"
-        className="flex flex-col justify-center items-center text-center gap-8 py-60"
+        className="flex flex-col justify-center items-center text-center gap-8 py-60 text-white"
       >
         <p>
           今夜、月は静かに笑う。
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="flex flex-col justify-center items-center gap-8 mb-20"
+        className="flex flex-col justify-center items-center gap-8 mb-20 text-white"
       >
         <h2 className="text-center text-6xl">
           <ruby>
