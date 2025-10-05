@@ -12,7 +12,7 @@ export default function Home() {
           alt="Background Image"
           width={1920}
           height={1080}
-          className="fixed top-0 left-0 w-full h-full object-cover z-0 opacity-30"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30"
         />
         <div className="relative z-10 flex flex-row items-center w-full max-w-7xl justify-between">
           <div className="flex flex-col justify-center items-center">
