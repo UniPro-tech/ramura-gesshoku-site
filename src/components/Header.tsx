@@ -10,6 +10,7 @@ export function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
+                target={link.target || "_self"}
                 className="hover:underline"
               >
                 {link.label}

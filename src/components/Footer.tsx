@@ -53,6 +53,7 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
+              target={link.target || "_self"}
             >
               {link.label}
             </Link>
