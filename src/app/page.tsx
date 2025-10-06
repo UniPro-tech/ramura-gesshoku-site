@@ -1,4 +1,12 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "月蝕(Gesshoku) - UTAU音源配布サイト",
+  description:
+    "今夜、月は静かに笑う。その影に立つは、名も無き旅人――月蝕。月夜に舞い降りる、正体不明の存在 ─ UTAU音源「月蝕(Gesshoku)」の公式配布サイトへようこそ。",
+  keywords: ["月蝕", "Gesshoku", "音楽", "UTAU", "音源", "ダウンロード"],
+};
 
 export default function Home() {
   return (
