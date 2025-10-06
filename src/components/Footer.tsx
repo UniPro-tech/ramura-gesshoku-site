@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-row justify-center items-center w-full px-8 py-10 bg-[#1b1b20] text-white">
-      <div className="flex flex-row justify-between items-center w-full max-w-4xl">
+    <footer className="w-full px-8 py-10 bg-[#1b1b20] text-white">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center w-full md:max-w-4xl md:mx-auto gap-8">
         {/* Left */}
-        <div className="flex flex-col justify-start items-start">
+        <div className="flex flex-col justify-start items-start order-3 md:order-1">
           <h1 className="text-6xl">
             <ruby>
               月蝕<rt>Gesshoku</rt>
@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Center */}
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-4 order-1 md:order-2">
           <Link
             href="https://uniproject.jp/"
             target="_blank"
@@ -48,7 +48,7 @@ export default function Footer() {
           </Link>
         </div>
         {/* Right */}
-        <div className="flex flex-col justify-start items-start gap-2 text-2xl">
+        <div className="flex flex-col justify-start items-start gap-2 text-2xl order-2 md:order-3">
           {LINKS.map((link) => (
             <Link
               key={link.href}
