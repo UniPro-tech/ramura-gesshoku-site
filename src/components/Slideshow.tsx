@@ -25,7 +25,7 @@ export default function Slideshow({ images, interval = 3000 }: SlideshowProps) {
   const img = images[index];
 
   return (
-    <div className="relative w-[400px] h-auto flex items-center justify-center flex-col">
+    <div className="relative w-full max-w-[400px] h-auto flex items-center justify-center flex-col">
       <button
         onClick={prev}
         className="absolute left-0 z-20 bg-black/40 text-white p-2 rounded-full m-2"
@@ -39,8 +39,8 @@ export default function Slideshow({ images, interval = 3000 }: SlideshowProps) {
           src={img.src}
           alt={img.alt || "slide"}
           width={img.width || 400}
-          height={img.height || 0}
-          className="object-contain"
+          height={img.height || 400}
+          className="object-contain max-w-full h-auto"
         />
       </div>
 

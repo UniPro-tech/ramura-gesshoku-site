@@ -107,19 +107,21 @@ export default function Home() {
             月蝕<rt>Gesshoku</rt>
           </ruby>
         </h2>
-        <div className="flex flex-row justify-center items-center gap-16 w-full max-w-7xl">
-          <div className="flex flex-col justify-start items-center mb-30">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 w-full max-w-7xl px-6">
+          <div className="order-2 md:order-1 flex flex-col justify-start items-center mb-30">
             <div
               id="lead"
-              className="text-3xl mb-4 flex flex-col justify-center items-center"
+              className="text-2xl mb-4 flex flex-col justify-center items-center"
             >
               <span className="w-full break-keep">──「今夜は月が綺麗ですね。</span>
-              <span className="w-full break-keep">
+              <span className="w-full break-keep text-right">
                 {"　　"}ワタシの事は『
                 <ruby>
                   月蝕<rt>Gesshoku</rt>
                 </ruby>
-                』とお呼びください」──
+                』と
+                <wbr />
+                お呼びください」──
               </span>
             </div>
             <p className="text-xl">
@@ -140,7 +142,7 @@ export default function Home() {
               <br />
             </p>
           </div>
-          <div>
+          <div className="order-1 md:order-2 flex justify-center">
             <Slideshow
               images={[
                 { src: "/gesshoku/images/stand/0.png", alt: "stand 1", width: 400 },
