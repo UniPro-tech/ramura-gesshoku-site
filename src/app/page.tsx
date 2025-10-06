@@ -23,20 +23,21 @@ export default function Home() {
           height={1080}
           className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30"
         />
-        <div className="relative z-10 flex flex-row items-center w-full max-w-7xl justify-between">
+        <div className="relative z-10 flex flex-col md:flex-row items-center w-full max-w-7xl md:justify-between justify-center gap-8 md:gap-0">
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-[15rem] text-center">
+            <h1 className="text-[8rem] md:text-[15rem] text-center">
               <ruby>
-                月蝕<rt className="text-7xl">Gesshoku</rt>
+                月蝕<rt className="text-4xl md:text-7xl">Gesshoku</rt>
               </ruby>
             </h1>
-            <span className="text-6xl">2025.10.06</span>
+            <span className="text-2xl md:text-6xl">2025.10.06</span>
           </div>
           <Image
             src="/gesshoku/images/stand/3.png"
             alt="Hero Image"
             width={500}
-            height={0}
+            height={500}
+            className="w-60 md:w-[500px] h-auto"
           />
         </div>
       </section>
