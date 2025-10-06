@@ -3,6 +3,8 @@ import Download from "./client";
 import { resolve } from "node:path";
 import { promises as fs } from "fs";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "ダウンロード - 月蝕(Gesshoku)",
   description:

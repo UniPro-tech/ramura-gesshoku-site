@@ -5,6 +5,8 @@ import NicovideoPlayer from "@/components/NicoVideoPlayer";
 import { promises as fs } from "fs";
 import { resolve } from "path";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "月蝕(Gesshoku) - UTAU音源配布サイト",
   description:
