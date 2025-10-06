@@ -18,18 +18,22 @@ export default function Download() {
           height={1080}
           className="absolute top-0 left-0 w-full h-full object-cover z-10 opacity-30"
         />
-        <div className="relative z-20 flex flex-row items-center w-full max-w-7xl justify-center gap-40">
-          <div className="w-[200px]"></div>
-          <div className="flex flex-col justify-end items-center">
-            <h1 className="text-[7rem] text-center">音源一覧</h1>
-            <sub className="text-6xl">Download</sub>
+        <div className="relative z-20 flex flex-col md:flex-row items-center w-full max-w-7xl justify-center md:justify-between gap-10 md:gap-40 px-4">
+          {/* spacer hidden on mobile, kept for desktop spacing */}
+          <div className="hidden md:block w-[200px]"></div>
+          <div className="flex flex-col justify-end items-center text-center md:text-left">
+            <h1 className="text-[4.5rem] md:text-[7rem]">音源一覧</h1>
+            <sub className="text-3xl md:text-6xl">Download</sub>
           </div>
-          <Image
-            src="/gesshoku/images/stand/3.png"
-            alt="Hero Image"
-            width={200}
-            height={0}
-          />
+          <div className="mt-6 md:mt-0">
+            <Image
+              src="/gesshoku/images/stand/3.png"
+              alt="Hero Image"
+              width={200}
+              height={200}
+              className="w-60 h-auto"
+            />
+          </div>
         </div>
       </section>
       <section className="pt-20 flex flex-col justify-center items-center gap-8 w-full max-w-6xl">
