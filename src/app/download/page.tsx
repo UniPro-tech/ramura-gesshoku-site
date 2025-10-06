@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Download from "./client";
+import { resolve } from "node:path";
+import { promises as fs } from "fs";
 
 export const metadata: Metadata = {
   title: "ダウンロード - 月蝕(Gesshoku)",
@@ -8,6 +10,9 @@ export const metadata: Metadata = {
   keywords: ["月蝕", "Gesshoku", "音楽", "UTAU", "音源", "ダウンロード"],
 };
 
-export default function DownloadWrap() {
-  return <Download />;
+export default async function DownloadWrap() {
+  const dirPath = resolve(process.cwd(), "./data/settings/files.json");
+  const file = await fs.readFile(dirPath, { encoding: "utf-8" });
+  const filesData = JSON.parse(file).data as { name: string; label: string }[];
+  return <Download files={filesData} />;
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Download() {
+export default function Download({ files }: { files: { name: string; label: string }[] }) {
   return (
     <main className="bg-gradient-to-b z-0 from-[#000000] to-[#35333d] pb-20 min-h-screen flex flex-col justify-center items-center text-white">
       <section
@@ -57,12 +57,20 @@ export default function Download() {
           ご利用ください。
         </p>
         <div className="flex flex-col justify-center items-center w-full max-w-md py-20">
-          <div className="flex flex-col md:flex-row md:justify-between items-center w-full gap-4">
-            <h2 className="text-3xl text-center md:text-left">単独音</h2>
-            <div className="w-full md:w-auto flex justify-center md:justify-end">
-              <DownloadButton filename="tandokuon.zip" />
+          {files.length === 0 && (
+            <p className="text-2xl text-center">現在、配布中の音源はありません。</p>
+          )}
+          {files.map((file) => (
+            <div
+              key={file.name}
+              className="flex flex-col md:flex-row md:justify-between items-center w-full gap-4"
+            >
+              <h2 className="text-3xl text-center md:text-left">{file.label}</h2>
+              <div className="w-full md:w-auto flex justify-center md:justify-end">
+                <DownloadButton filename={file.name} />
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
     </main>
