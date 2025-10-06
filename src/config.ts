@@ -2,6 +2,6 @@ export const LINKS = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/download", label: "Download" },
-  { href: "/license", label: "License" },
-  { href: "/contact", label: "Contact" },
+  { href: "https://ramura.uniproject.jp/license", label: "License" },
+  { href: "https://ramura.uniproject.jp/contact", label: "Contact" },
 ];
