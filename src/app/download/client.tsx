@@ -37,9 +37,13 @@ export default function Download() {
         </div>
       </section>
       <section className="pt-20 flex flex-col justify-center items-center gap-8 w-full max-w-6xl">
-        <p className="text-2xl text-center max-w-3xl">
-          こちらから全ての音源をダウンロードできます。
-          <br />
+        <p className="text-2xl text-center max-w-3xl break-keep">
+          こちらから全ての
+          <wbr />
+          音源を
+          <wbr />
+          ダウンロードできます。
+          <wbr />
           <Link
             href="https://ramura.uniproject.jp/license"
             className="text-blue-300 underline"
@@ -47,12 +51,17 @@ export default function Download() {
           >
             利用規約
           </Link>
-          をご確認の上、ご利用ください。
+          を<wbr />
+          ご確認の上、
+          <wbr />
+          ご利用ください。
         </p>
         <div className="flex flex-col justify-center items-center w-full max-w-md py-20">
-          <div className="flex flex-row justify-between items-center w-full">
-            <h2 className="text-3xl">単独音</h2>
-            <DownloadButton filename="tandokuon.zip" />
+          <div className="flex flex-col md:flex-row md:justify-between items-center w-full gap-4">
+            <h2 className="text-3xl text-center md:text-left">単独音</h2>
+            <div className="w-full md:w-auto flex justify-center md:justify-end">
+              <DownloadButton filename="tandokuon.zip" />
+            </div>
           </div>
         </div>
       </section>
