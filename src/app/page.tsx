@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Slideshow from "../components/Slideshow";
 
 export const metadata: Metadata = {
   title: "月蝕(Gesshoku) - UTAU音源配布サイト",
@@ -139,12 +140,13 @@ export default function Home() {
             </p>
           </div>
           <div>
-            {/*　TODO:スライドショーにする */}
-            <Image
-              src="/gesshoku/images/stand/3.png"
-              alt="About Image"
-              width={400}
-              height={0}
+            <Slideshow
+              images={[
+                { src: "/gesshoku/images/stand/0.png", alt: "stand 1", width: 400 },
+                { src: "/gesshoku/images/stand/3.png", alt: "stand 3", width: 400 },
+                { src: "/gesshoku/images/stand/5.png", alt: "stand 5", width: 400 },
+                { src: "/gesshoku/images/stand/10.png", alt: "stand 10", width: 400 },
+              ]}
             />
           </div>
         </div>
