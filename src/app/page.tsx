@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Slideshow from "../components/Slideshow";
+import NicovideoPlayer from "@/components/NicoVideoPlayer";
+import { promises as fs } from "fs";
+import { resolve } from "path";
 
 export const metadata: Metadata = {
   title: "月蝕(Gesshoku) - UTAU音源配布サイト",
@@ -9,7 +12,11 @@ export const metadata: Metadata = {
   keywords: ["月蝕", "Gesshoku", "音楽", "UTAU", "音源", "ダウンロード"],
 };
 
-export default function Home() {
+export default async function Home() {
+  const dirPath = resolve(process.cwd(), "./data/settings/video.json");
+  const file = await fs.readFile(dirPath, { encoding: "utf-8" });
+  const videoIDs = JSON.parse(file).data as string[];
+
   return (
     <main className="bg-gradient-to-b from-[#040305] to-[#35333d] pb-20">
       <section
@@ -152,6 +159,21 @@ export default function Home() {
               ]}
             />
           </div>
+        </div>
+      </section>
+      <section
+        className={`flex flex-col justify-center items-center gap-8 mb-20 text-white ${videoIDs.length === 0 ? "hidden" : ""}`}
+      >
+        <h2 className="text-center text-6xl text-white mb-10">配布動画</h2>
+        <div className="grid md:grid-cols-2 grid-cols-1 px-3 justify-center items-center">
+          {videoIDs.map((id) => (
+            <NicovideoPlayer
+              key={id}
+              id={id}
+              width={728}
+              height={410}
+            />
+          ))}
         </div>
       </section>
     </main>

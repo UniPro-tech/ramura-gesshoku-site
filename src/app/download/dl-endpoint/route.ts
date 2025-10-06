@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     return new NextResponse("File not found", { status: 404 });
   }
 
-  const dirPath = resolve(process.cwd(), "./public/assets");
+  const dirPath = resolve(process.cwd(), "./data/files");
   const files = await fs.readdir(dirPath);
   if (!files.includes(fileName)) {
     return new NextResponse("File not found", { status: 404 });
