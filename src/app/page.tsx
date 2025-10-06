@@ -8,7 +8,7 @@ export default function Home() {
         className="min-h-screen relative flex flex-col justify-center items-center text-white"
       >
         <Image
-          src="/images/hero.png"
+          src="/gesshoku/images/hero.png"
           alt="Background Image"
           width={1920}
           height={1080}
@@ -24,7 +24,7 @@ export default function Home() {
             <span className="text-6xl">2025.10.06</span>
           </div>
           <Image
-            src="/images/stand/3.png"
+            src="/gesshoku/images/stand/3.png"
             alt="Hero Image"
             width={500}
             height={0}
@@ -133,7 +133,7 @@ export default function Home() {
           <div>
             {/*　TODO:スライドショーにする */}
             <Image
-              src="/images/stand/3.png"
+              src="/gesshoku/images/stand/3.png"
               alt="About Image"
               width={400}
               height={0}

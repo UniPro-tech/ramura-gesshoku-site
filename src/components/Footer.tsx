@@ -28,7 +28,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/banner/powered-by-unipro.png"
+              src="/gesshoku/images/banner/powered-by-unipro.png"
               alt="Powered by UniProject"
               width={250}
               height={0}
@@ -40,7 +40,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/banner/arane.png"
+              src="/gesshoku/images/banner/arane.png"
               alt="荒音の夜 - 現音令彼 配布サイト"
               width={250}
               height={0}
