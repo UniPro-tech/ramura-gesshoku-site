@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function Download() {
   return (
-    <main className="bg-gradient-to-b z-0 from-[#040305] to-[#35333d] pb-20 min-h-screen flex flex-col justify-center items-center text-white">
+    <main className="bg-gradient-to-b z-0 from-[#000000] to-[#35333d] pb-20 min-h-screen flex flex-col justify-center items-center text-white">
       <section
         id="hero"
         className="min-h-screen relative flex flex-col justify-center items-center text-white w-full"
