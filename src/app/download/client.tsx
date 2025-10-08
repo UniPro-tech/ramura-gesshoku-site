@@ -37,7 +37,7 @@ export default function Download({ files }: { files: { name: string; label: stri
         </div>
       </section>
       <section className="pt-20 flex flex-col justify-center items-center gap-8 w-full max-w-6xl">
-        <p className="text-2xl text-center max-w-3xl break-keep">
+        <p className="text-2xl text-center max-w-3xl break-keep px-10">
           こちらから全ての
           <wbr />
           音源を
@@ -56,7 +56,7 @@ export default function Download({ files }: { files: { name: string; label: stri
           <wbr />
           ご利用ください。
         </p>
-        <div className="flex flex-col justify-center items-center w-full max-w-md py-20">
+        <div className="flex flex-col justify-center items-center w-full max-w-md py-20 space-y-5">
           {files.length === 0 && (
             <p className="text-2xl text-center">現在、配布中の音源はありません。</p>
           )}
