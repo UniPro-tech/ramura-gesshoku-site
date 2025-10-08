@@ -32,7 +32,7 @@ export default async function Home() {
           height={1080}
           className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30"
         />
-        <div className="relative z-10 flex flex-col md:flex-row items-center w-full max-w-7xl md:justify-between justify-center gap-8 md:gap-0">
+        <div className="relative z-10 flex flex-col md:flex-row items-center w-full max-w-7xl md:justify-between justify-center gap-8 md:gap-0 py-14">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-[8rem] md:text-[15rem] text-center">
               <ruby>
@@ -109,7 +109,7 @@ export default async function Home() {
       </section>
       <section
         id="about"
-        className="flex flex-col justify-center items-center gap-8 mb-20 text-white"
+        className="flex flex-col justify-center items-center gap-8 mb-5 text-white"
       >
         <h2 className="text-center text-6xl">
           <ruby>
@@ -117,7 +117,7 @@ export default async function Home() {
           </ruby>
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 w-full max-w-7xl px-6">
-          <div className="order-2 md:order-1 flex flex-col justify-start items-center mb-30">
+          <div className="order-2 md:order-1 flex flex-col justify-start items-center">
             <div
               id="lead"
               className="text-2xl mb-4 flex flex-col justify-center items-center"
@@ -164,18 +164,56 @@ export default async function Home() {
         </div>
       </section>
       <section
-        className={`flex flex-col justify-center items-center gap-8 mb-20 text-white ${videoIDs.length === 0 ? "hidden" : ""}`}
+        className={`flex flex-col justify-center items-center gap-8 mt-30 text-white ${videoIDs.length === 0 ? "hidden" : ""}`}
       >
         <h2 className="text-center text-6xl text-white mb-10">配布動画</h2>
-        <div className="grid md:grid-cols-2 grid-cols-1 px-3 justify-center items-center">
-          {videoIDs.map((id) => (
-            <NicovideoPlayer
-              key={id}
-              id={id}
-              width={728}
-              height={410}
-            />
-          ))}
+        <div className="w-full max-w-7xl px-3">
+          {videoIDs.length === 1 ? (
+            // Single: center
+            <div className="flex justify-center">
+              <NicovideoPlayer
+                id={videoIDs[0]}
+                width={728}
+                height={410}
+              />
+            </div>
+          ) : videoIDs.length === 2 ? (
+            // Two: side-by-side on md+, stacked on small screens
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {videoIDs.map((id) => (
+                <div
+                  key={id}
+                  className="flex justify-center"
+                >
+                  <NicovideoPlayer
+                    id={id}
+                    width={728}
+                    height={410}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            // Three or more: first two as top row, third centered on its own row
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {videoIDs.map((id, idx) => (
+                <div
+                  key={id}
+                  className={
+                    idx === 2
+                      ? "col-span-1 md:col-span-2 flex justify-center"
+                      : "flex justify-center"
+                  }
+                >
+                  <NicovideoPlayer
+                    id={id}
+                    width={728}
+                    height={410}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </main>
