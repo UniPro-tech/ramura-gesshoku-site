@@ -27,6 +27,7 @@ export default function Slideshow({ images, interval = 3000 }: SlideshowProps) {
   return (
     <div className="relative w-full max-w-[400px] h-auto flex items-center justify-center flex-col">
       <button
+        type="button"
         onClick={prev}
         className="absolute left-0 z-20 bg-black/40 text-white p-2 rounded-full m-2"
         aria-label="previous"
@@ -45,6 +46,7 @@ export default function Slideshow({ images, interval = 3000 }: SlideshowProps) {
       </div>
 
       <button
+        type="button"
         onClick={next}
         className="absolute right-0 z-20 bg-black/40 text-white p-2 rounded-full m-2"
         aria-label="next"
@@ -53,9 +55,10 @@ export default function Slideshow({ images, interval = 3000 }: SlideshowProps) {
       </button>
       {/* pagination dots */}
       <div className="mt-4 flex gap-2">
-        {images.map((_, i) => (
+        {images.map((image, i) => (
           <button
-            key={i}
+            type="button"
+            key={image.alt}
             onClick={() => setIndex(i)}
             className={`w-3 h-3 rounded-full ${i === index ? "bg-white" : "bg-white/40"}`}
             aria-label={`Go to slide ${i + 1}`}

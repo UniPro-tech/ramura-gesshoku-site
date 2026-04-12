@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-import Download from "./client";
+import { promises as fs } from "node:fs";
 import { resolve } from "node:path";
-import { promises as fs } from "fs";
+import type { Metadata } from "next";
+import Download from "./client";
 
 export const dynamic = "force-dynamic";
 

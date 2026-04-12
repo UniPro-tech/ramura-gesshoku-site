@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Download({ files }: { files: { name: string; label: string }[] }) {
   return (
-    <main className="bg-gradient-to-b z-0 from-[#000000] to-[#35333d] pb-20 min-h-screen flex flex-col justify-center items-center text-white">
+    <main className="bg-linear-to-b z-0 from-[#000000] to-[#35333d] pb-20 min-h-screen flex flex-col justify-center items-center text-white">
       <section
         id="hero"
         className="min-h-screen relative flex flex-col justify-center items-center text-white w-full"
@@ -88,13 +88,15 @@ function DownloadButton({ filename }: { filename: string }) {
         onClick={() => setOpen(true)}
         className="text-3xl bg-blue-950 px-10 py-2"
         aria-haspopup="dialog"
+        type="button"
       >
         Download
       </button>
 
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div
+          <button
+            type="button"
             className="absolute inset-0 bg-black/60"
             onClick={() => setOpen(false)}
           />
@@ -119,6 +121,7 @@ function DownloadButton({ filename }: { filename: string }) {
               <button
                 className="px-4 py-2 bg-gray-200 rounded"
                 onClick={() => setOpen(false)}
+                type="button"
               >
                 キャンセル
               </button>
@@ -128,6 +131,7 @@ function DownloadButton({ filename }: { filename: string }) {
                   setOpen(false);
                   router.push(downloadUrl);
                 }}
+                type="button"
               >
                 同意する
               </button>

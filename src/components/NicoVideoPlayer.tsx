@@ -36,10 +36,7 @@ export default function NicovideoPlayer(props: Props) {
   return (
     <div>
       {loading && <p>Loading...</p>}
-      <div
-        ref={divRef}
-        style={{ display: loading ? "none" : "block" }}
-      />
+      <div ref={divRef} style={{ display: loading ? "none" : "block" }} />
     </div>
   );
 }

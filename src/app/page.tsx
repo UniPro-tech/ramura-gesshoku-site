@@ -1,9 +1,9 @@
-import { Metadata } from "next";
+import { promises as fs } from "node:fs";
+import { resolve } from "node:path";
+import type { Metadata } from "next";
 import Image from "next/image";
-import Slideshow from "../components/Slideshow";
 import NicovideoPlayer from "@/components/NicoVideoPlayer";
-import { promises as fs } from "fs";
-import { resolve } from "path";
+import Slideshow from "../components/Slideshow";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +20,7 @@ export default async function Home() {
   const videoIDs = JSON.parse(file).data as string[];
 
   return (
-    <main className="bg-gradient-to-b from-[#040305] to-[#35333d] pb-20">
+    <main className="bg-linear-to-b from-[#040305] to-[#35333d] pb-20">
       <section
         id="hero"
         className="min-h-screen relative flex flex-col justify-center items-center text-white"
@@ -122,7 +122,9 @@ export default async function Home() {
               id="lead"
               className="text-2xl mb-4 flex flex-col justify-center items-center"
             >
-              <span className="w-full break-keep">──「今夜は月が綺麗ですね。</span>
+              <span className="w-full break-keep">
+                ──「今夜は月が綺麗ですね。
+              </span>
               <span className="w-full break-keep text-right">
                 {"　　"}ワタシの事は『
                 <ruby>
@@ -154,10 +156,26 @@ export default async function Home() {
           <div className="order-1 md:order-2 flex justify-center">
             <Slideshow
               images={[
-                { src: "/gesshoku/images/stand/0.png", alt: "stand 1", width: 400 },
-                { src: "/gesshoku/images/stand/3.png", alt: "stand 3", width: 400 },
-                { src: "/gesshoku/images/stand/5.png", alt: "stand 5", width: 400 },
-                { src: "/gesshoku/images/stand/10.png", alt: "stand 10", width: 400 },
+                {
+                  src: "/gesshoku/images/stand/0.png",
+                  alt: "stand 1",
+                  width: 400,
+                },
+                {
+                  src: "/gesshoku/images/stand/3.png",
+                  alt: "stand 3",
+                  width: 400,
+                },
+                {
+                  src: "/gesshoku/images/stand/5.png",
+                  alt: "stand 5",
+                  width: 400,
+                },
+                {
+                  src: "/gesshoku/images/stand/10.png",
+                  alt: "stand 10",
+                  width: 400,
+                },
               ]}
             />
           </div>
@@ -171,25 +189,14 @@ export default async function Home() {
           {videoIDs.length === 1 ? (
             // Single: center
             <div className="flex justify-center">
-              <NicovideoPlayer
-                id={videoIDs[0]}
-                width={728}
-                height={410}
-              />
+              <NicovideoPlayer id={videoIDs[0]} width={728} height={410} />
             </div>
           ) : videoIDs.length === 2 ? (
             // Two: side-by-side on md+, stacked on small screens
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {videoIDs.map((id) => (
-                <div
-                  key={id}
-                  className="flex justify-center"
-                >
-                  <NicovideoPlayer
-                    id={id}
-                    width={728}
-                    height={410}
-                  />
+                <div key={id} className="flex justify-center">
+                  <NicovideoPlayer id={id} width={728} height={410} />
                 </div>
               ))}
             </div>
@@ -205,11 +212,7 @@ export default async function Home() {
                       : "flex justify-center"
                   }
                 >
-                  <NicovideoPlayer
-                    id={id}
-                    width={728}
-                    height={410}
-                  />
+                  <NicovideoPlayer id={id} width={728} height={410} />
                 </div>
               ))}
             </div>

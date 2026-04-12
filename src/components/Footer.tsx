@@ -1,6 +1,6 @@
-import { LINKS } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
+import { LINKS } from "@/config";
 
 export default function Footer() {
   return (

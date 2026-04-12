@@ -1,16 +1,17 @@
 "use client";
-import { LINKS } from "@/config";
 import Link from "next/link";
 import { useState } from "react";
+import { LINKS } from "@/config";
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full mt-8 text-white flex justify-center items-center text-4xl absolute top-0 z-50 bg-black/40 backdrop-blur-sm md:!backdrop-blur-none md:!bg-black/0">
+    <header className="w-full mt-8 text-white flex justify-center items-center text-4xl absolute top-0 z-50 bg-black/40 backdrop-blur-sm md:backdrop-blur-none! md:bg-black/0!">
       <nav className="w-full flex items-center justify-center md:justify-center relative px-4 py-3">
         {/* Hamburger for mobile */}
         <button
+          type="button"
           aria-controls="primary-navigation"
           aria-expanded={open}
           onClick={() => setOpen((s) => !s)}
@@ -26,6 +27,7 @@ export function Header() {
               height="28"
               fill="currentColor"
             >
+              <title>メニューを閉じる</title>
               <path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12l-4.89 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z" />
             </svg>
           ) : (
@@ -37,6 +39,7 @@ export function Header() {
               height="28"
               fill="currentColor"
             >
+              <title>メニューを開く</title>
               <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
             </svg>
           )}
